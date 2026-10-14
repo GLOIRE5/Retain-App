@@ -1,0 +1,12 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: retain-mongo
+    restart: unless-stopped
+    ports:
+      - "27018:27017"
+    volumes:
+      - retain-mongo-data:/data/db
+
+volumes:
+  retain-mongo-data:
