@@ -20,6 +20,9 @@ export default function AppLayout() {
           <Button color="inherit" component={RouterLink} to="/">
             Dashboard
           </Button>
+          <Button color="inherit" component={RouterLink} to="/expenses">
+            Expenses
+          </Button>
           {isAdmin && (
             <Button color="inherit" component={RouterLink} to="/admin">
               Admin
