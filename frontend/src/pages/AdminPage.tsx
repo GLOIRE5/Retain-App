@@ -1,14 +1,28 @@
-import { Paper, Typography } from '@mui/material';
+import { useState } from 'react';
+import { Paper, Stack, Tab, Tabs, Typography } from '@mui/material';
+import AdminCategoriesPanel from '../components/AdminCategoriesPanel';
+import AdminOverview from '../components/AdminOverview';
+
+type AdminTab = 'overview' | 'categories';
 
 export default function AdminPage() {
+  const [tab, setTab] = useState<AdminTab>('overview');
+
   return (
-    <Paper sx={{ p: 3 }}>
-      <Typography variant="h5" sx={{ fontWeight: 600 }} gutterBottom>
+    <Stack spacing={3}>
+      <Typography variant="h5" sx={{ fontWeight: 600 }}>
         Admin dashboard
       </Typography>
-      <Typography sx={{ color: 'text.secondary' }}>
-        Category management and platform insights will appear here. Only admins can see this page.
-      </Typography>
-    </Paper>
+
+      <Paper>
+        <Tabs value={tab} onChange={(_event, value: AdminTab) => setTab(value)}>
+          <Tab label="Overview" value="overview" />
+          <Tab label="Categories" value="categories" />
+        </Tabs>
+      </Paper>
+
+      {/* Each tab loads fresh data when opened, so category changes show up in the overview */}
+      {tab === 'overview' ? <AdminOverview /> : <AdminCategoriesPanel />}
+    </Stack>
   );
 }

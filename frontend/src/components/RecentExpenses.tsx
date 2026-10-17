@@ -26,7 +26,7 @@ export default function RecentExpenses({ expenses }: { expenses: Expense[] }) {
                   {expense.title}
                 </Typography>
                 <Typography variant="body2" sx={{ color: 'text.secondary' }} noWrap>
-                  {expense.category.name} ? {formatDate(expense.date)}
+                  {expense.category.name} - {formatDate(expense.date)}
                 </Typography>
               </Box>
               <Typography sx={{ fontWeight: 600, whiteSpace: 'nowrap' }}>{formatCurrency(expense.amount)}</Typography>
