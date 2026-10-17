@@ -22,3 +22,19 @@ export const todayInputDate = (): string => new Date().toISOString().slice(0, 10
 
 // "YYYY-MM" for the current month
 export const currentMonthKey = (): string => new Date().toISOString().slice(0, 7);
+
+// Moves a "YYYY-MM" key forward or backward by a number of months
+export const shiftMonth = (month: string, delta: number): string => {
+  const [year, monthNumber] = month.split('-').map(Number);
+  return new Date(Date.UTC(year, monthNumber - 1 + delta, 1)).toISOString().slice(0, 7);
+};
+
+// "2026-10" -> "October 2026"
+export const formatMonthLabel = (month: string): string => {
+  const [year, monthNumber] = month.split('-').map(Number);
+  return new Date(Date.UTC(year, monthNumber - 1, 1)).toLocaleDateString('en-GB', {
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+};
