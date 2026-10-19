@@ -11,18 +11,16 @@ A personal expense and budget tracker. Record what you spend, search and filter 
 2. The app sends requests to the API with your login token.
 3. The API checks who you are, reads or writes the database, and sends the result back.
 
-A few things to know:
-- Login is handled with React Context. Search, filters, sorting and pages are handled with Redux.
-- The API only lets you see your own expenses and budgets.
-- Admin pages and routes are for admins only. Normal sign-ups are always regular users.
-
+4.Login is handled with React Context. Search, filters, sorting and pages are handled with Redux.
+5.The API only lets you see your own expenses and budgets.
+6.Admin pages and routes are for admins only. Normal sign-ups are always regular users.
 Built with React, TypeScript, Vite, Material UI, Redux Toolkit, Node.js, Express and MongoDB.
 
 ## Run it locally
 
 You need Node.js 20+ and Docker Desktop.
 
-1. Get the code and install**
+1. Get the code and install
 
 bash
 git clone https://github.com/GLOIRE5/Retain-App.git
@@ -32,12 +30,12 @@ cd ../frontend && npm install
 cd ..
 
 
-2. Start the database**
+2. Start the database
 
 docker compose up -d
 
 
-3. Set up the backend settings**
+3. Set up the backend settings
 
 Copy `backend/.env.example` to `backend/.env`, then open it and set `JWT_SECRET` to any long random text. You can generate one with:
 
@@ -47,7 +45,7 @@ node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 
 The `ADMIN_EMAIL` and `ADMIN_PASSWORD` in that file become your admin login.
 
-4. Create the categories and admin account**
+4. Create the categories and admin account
 
 `bash
 cd backend
