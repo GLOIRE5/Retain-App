@@ -2,8 +2,8 @@
 
 A personal expense and budget tracker. Record what you spend, search and filter it, set a monthly budget, and see where your money goes. Admins manage categories and see platform stats.
 
-- Live app: _add the frontend URL here_
-- API: _add the backend URL here_
+- Live app: https://retain-app-klv3.onrender.com
+- API: https://retain-app-klv3.onrender.com/api (the app and the API share one address)
 
 ## How it works
 
