@@ -12,7 +12,9 @@ A personal expense and budget tracker. Record what you spend, search and filter 
 3. The API checks who you are, reads or writes the database, and sends the result back.
 
 4.Login is handled with React Context. Search, filters, sorting and pages are handled with Redux.
+
 5.The API only lets you see your own expenses and budgets.
+
 6.Admin pages and routes are for admins only. Normal sign-ups are always regular users.
 Built with React, TypeScript, Vite, Material UI, Redux Toolkit, Node.js, Express and MongoDB.
 
